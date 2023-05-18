@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> A D R I A N O</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+   
+    <style>
+        .img{
+            display:block;
+            margin-left: 28rem;
+            margin-top: 200px;
+            width: 400px;
+            height: 300px;
+            border: 10px red groove;
+            border
+        }
+    </style>
+    
+    
+</head>
+
+<body>
+    <h1 class="font-effect-fire-animation">ADRIANO CURSE</h1>
+<img id="img1" class="img" data-img="https://i.ibb.co/Y03cPgh/img1.jpg">
+<img id="img2" class="img" data-img="https://i.ibb.co/cwWJYyR/img2.jpg">
+<img id="img3" class="img" data-img="https://i.ibb.co/xfN9QYd/img3.jpg">
+<img id="img4" class="img" data-img="https://i.ibb.co/sHxRn5T/img4.jpg">
+<img id="img5" class="img" data-img="https://i.ibb.co/b1PWjkf/img5.jpg">
+<img id="img6" class="img" data-img="https://i.ibb.co/MBp8DCB/img6.jpg">
+
+
+<script>
+    let options={
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.25
+    };
+    let callback = (entries, observer) => {
+        entries.forEach(entry => {     
+            if (entry.isIntersecting  && entry.target.className === 'img'){
+                let imageUrl = entry.target.getAttribute('data-img');
+                if (imageUrl){
+                    entry.target.src = imageUrl;
+                    observer.unobserve(entry.target);
+                }
+            }
+            
+        });
+    }
+    let observer = new IntersectionObserver (callback, options)
+    observer.observe (document.querySelector('#img1'));
+    observer.observe (document.querySelector('#img2'));
+    observer.observe (document.querySelector('#img3'));
+    observer.observe (document.querySelector('#img4'));
+    observer.observe (document.querySelector('#img5'));
+    observer.observe (document.querySelector('#img6'));
+</script>
+</body>
+</html>

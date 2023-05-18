@@ -1,0 +1,17 @@
+@import "https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation";
+
+h1 {
+  font-family: Rancho;
+  font-size: 60px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+
+body {
+    background-color:red;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://www.bookforum.com/uploads/upload.000/id24038/article00_1064x.jpg)
+}
+
